@@ -1,9 +1,10 @@
-function aproksimacija(a,stL,t)
+function aproksimacija(a,stL,t,c)
 %APROKSIMACIJA aproksimira kroznico s kotom a in parametrom stL, ki je doloca za katero aproksimacijo gre
 % 1. enostranski Hermiteov interpolant
 % 2. equioscillating error
 % 3. Hermiteov interpolant z equioscillating error
 % t je parameter med 0 in 1
+% c je color
 
 if stL == 1 || stL == 2
     L = 4/3*tan(a/4);
@@ -13,7 +14,7 @@ end
 
 if stL == 3
     K = 1/2 - (3-2*(2)^(1/2))^(1/3) - (3+2*(2)^(1/2))^(1/3);
-    L = ((9-2*K)*sin(a)-(((9-2*K)*sin(a))^2 - 6*(2*K+3*cos(a))*(5-2*K)*(1-cos(a)))^(1/2)) / (3*(2*K+3*cos(a))); %nisem zihr a je x vektorsko al krat samo to ni vektor
+    L = ((9-2*K)*sin(a)-(((9-2*K)*sin(a))^2 - 6*(2*K+3*cos(a))*(5-2*K)*(1-cos(a)))^(1/2)) / (3*(2*K+3*cos(a)));
 end
 
 B = [1, 0;
@@ -24,18 +25,18 @@ B = [1, 0;
 %narisemo dobljeno
 if stL == 2
     B = faktor .* B;
-    plotbezier(B,t,'blue')
+    plotbezier(B,t,c)
 end
 if stL == 1 || stL == 3
-    plotbezier(B,t,'blue')
+    plotbezier(B,t,c)
 end
 
 hold on;
 axis equal;
 %narisemo se dejansko kroznico
-t2=linspace(0,pi/2);
-plot(cos(t2),sin(t2),'k-','LineWidth',0.2);
+%t2=linspace(0,pi/2);
+%plot(cos(t2),sin(t2),'k-','LineWidth',0.2);
 %narisemo se sredinsko tocko pri t=1/2
-sr = bezier(B,1/2);
-scatter(sr(1),sr(2),'red','filled')
+%sr = bezier(B,1/2);
+%scatter(sr(1),sr(2),'red','filled')
 end
