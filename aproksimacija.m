@@ -13,7 +13,7 @@ end
 
 if stL == 3
     K = 1/2 - (3-2*(2)^(1/2))^(1/3) - (3+2*(2)^(1/2))^(1/3);
-    L = ((9-2*K)*sin(a)-(((9-2*K)*sin(a))^2 - 6*(2*K+3*cos(a))*(5-2*K)*(1-cos(a)))^(1/2)) * (3*(2*K+3*cos(a))^(-1)); %nisem zihr a je x vektorsko al krat samo to ni vektor
+    L = ((9-2*K)*sin(a)-(((9-2*K)*sin(a))^2 - 6*(2*K+3*cos(a))*(5-2*K)*(1-cos(a)))^(1/2)) / (3*(2*K+3*cos(a))); %nisem zihr a je x vektorsko al krat samo to ni vektor
 end
 
 B = [1, 0;
