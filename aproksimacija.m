@@ -31,11 +31,6 @@ if stL == 1 || stL == 3
     plotbezier(B,t,c)
 end
 
-hold on;
-axis equal;
-%narisemo se dejansko kroznico
-%t2=linspace(0,pi/2);
-%plot(cos(t2),sin(t2),'k-','LineWidth',0.2);
 %narisemo se sredinsko tocko pri t=1/2
 %sr = bezier(B,1/2);
 %scatter(sr(1),sr(2),'red','filled')
